@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 20px 0;
+            color: #d16fcf;
+        }
+
+        ul {
+            padding: 0;
+            max-width: 600px;
+            margin: 20px auto;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        li {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eaeaea;
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        li:hover {
+            background-color: #f1f1f1;
+        }
+
+        .nombre {
+            font-weight: bold;
+        }
+
+        .precio {
+            color: #c92626;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #d0b2d4;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1><i>Super Mercado Nicole</i></h1>
+    <ul>
+        {% for producto in productos %}
+            <li>
+                <span class="nombre">{{ producto.nombre }}</span>
+                <span class="precio">${{ producto.precio }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <footer>
+        <p>¡Gracias por visitarnos!</p>
+    </footer>
+</body>
+</html>
+
